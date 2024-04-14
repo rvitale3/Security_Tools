@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 #
+import sys
 import math
 from prettytable import PrettyTable as ptable
 from decimal import Decimal
@@ -18,18 +19,22 @@ def character_space():
     a list with the number of possible chars within that selection and the selection.
     e.g chars_space = [26,"[a-z]"]
     """
-    chars_list = int(input("""
-    Please select the password character composition:\n
-    (1) Lower case only     [a-z]
-    (2) Upper case only     [A-Z]
-    (3) Numbers only        [0-9]
-    (4) Lower/Upper         [a-zA-Z]
-    (5) Lower/Numbers       [a-z0-9]
-    (6) Upper/Numbers       [A-Z0-9]
-    (7) Lower/Upper/Numbers [a-zA-Z0-9]
-    (8) All and Special     [a-zA-Z0-9!@#$%^&*()+_~`-_=+[]{}\|;:\'",.<>?/]\n
-    Enter a number from the list: """))
-    
+    try:
+        chars_list = int(input("""
+        Please select the password character composition:\n
+        (1) Lower case only     [a-z]
+        (2) Upper case only     [A-Z]
+        (3) Numbers only        [0-9]
+        (4) Lower/Upper         [a-zA-Z]
+        (5) Lower/Numbers       [a-z0-9]
+        (6) Upper/Numbers       [A-Z0-9]
+        (7) Lower/Upper/Numbers [a-zA-Z0-9]
+        (8) All and Special     [a-zA-Z0-9!@#$%^&*()+_~`-_=+[]{}\|;:\'",.<>?/]\n
+        Enter a number from the list: """))
+    except:
+        print("\nInvalid option : Please try again and select a valid number from the list\n")
+        sys.exit()
+        
     if chars_list >=1 and chars_list <= 8:
         if chars_list == 1:
             chars_space = [26,"[a-z]"]
@@ -47,9 +52,11 @@ def character_space():
             chars_space = [62,"[a-zA-Z0-9]"]
         else:
             chars_space = [97,"[a-zA-Z0-9!@#$%^&*()+_~`-_=+[]{}|;:\'\",.<>?/]"]
+            
     else:
-        print("\nInvalid option : Please select a valid number from the list\n")
-        character_space()
+        print("\nInvalid option : Please try again and select a valid number from the list\n")
+        sys.exit()
+        
     return chars_space
 
 def cracking_speed():
@@ -66,19 +73,23 @@ def cracking_speed():
     selected option as string.
     e.g. crack_speed = [1e+6,"1 MHz"]
     """
-    crack_list = int(input("""
-    Please select the cracking speed:\n
-    (1) 1   Mega Hertz (MHz)
-    (2) 10  Mega Hertz (MHz)
-    (3) 100 Mega Hertz (MHz)
-    (4) 1   Giga Hertz (GHz)
-    (5) 10  Giga Hertz (GHz)
-    (6) 100 Giga Hertz (GHz)
-    (7) 1   Tera Hertz (THz)
-    (8) 10  Tera Hertz (THz)
-    (9) 100 Tera Hertz (THz)\n
-    Enter a number from the list: """))
-
+    try:
+        crack_list = int(input("""
+        Please select the cracking speed:\n
+        (1) 1   Mega Hertz (MHz)
+        (2) 10  Mega Hertz (MHz)
+        (3) 100 Mega Hertz (MHz)
+        (4) 1   Giga Hertz (GHz)
+        (5) 10  Giga Hertz (GHz)
+        (6) 100 Giga Hertz (GHz)
+        (7) 1   Tera Hertz (THz)
+        (8) 10  Tera Hertz (THz)
+        (9) 100 Tera Hertz (THz)\n
+        Enter a number from the list: """))
+    except:
+        print("\nInvalid option : Please try again and select a valid number from the list\n")
+        sys.exit()
+    
     if crack_list >=1 and crack_list <= 9:
         if crack_list == 1:
             crack_speed = [1e+6,"1 MHz"]
@@ -98,9 +109,11 @@ def cracking_speed():
             crack_speed = [10e+12,"10 THz"]
         else:
             crack_speed = [100e+12,"100 THz"]
+            
     else:
-        print("\nInvalid option : Please select a valid number from the list\n")
-        cracking_speed()    
+        print("\nInvalid option : Please try again and select a valid number from the list\n")
+        sys.exit()
+        
     return crack_speed
 
 def processing_stations():
@@ -116,18 +129,23 @@ def processing_stations():
     ---------
     proc_stations  :  The number of processing elements.
     """
-    proc_list = int(input("""
-    Please select the number of processing elements working in parallel:\n
-    (1) 1
-    (2) 10
-    (3) 100
-    (4) 1,000
-    (5) 10,000
-    (6) 100,000
-    (7) 1,000,000   
-    (8) 10,000,000
-    (9) 100,000,000\n
-    Enter a number from the list: """))
+    try:
+        proc_list = int(input("""
+        Please select the number of processing elements working in parallel:\n
+        (1) 1
+        (2) 10
+        (3) 100
+        (4) 1,000
+        (5) 10,000
+        (6) 100,000
+        (7) 1,000,000   
+        (8) 10,000,000
+        (9) 100,000,000\n
+        Enter a number from the list: """))
+    except:
+        print("\nInvalid option : Please try again and select a valid number from the list\n")
+        sys.exit()
+    
     if proc_list >=1 and proc_list <= 9:
         if proc_list == 1:
             proc_stations = 1
@@ -147,9 +165,11 @@ def processing_stations():
             proc_stations = 10e+6
         else:
             proc_stations = 100e+6
+            
     else:
-        print("\nInvalid option : Please select a valid number from the list\n")
-        processing_stations()    
+        print("\nInvalid option : Please try again and select a valid number from the list\n")
+        sys.exit()
+
     return proc_stations
 
 def password_entropy(N,L):
@@ -192,10 +212,13 @@ def main():
     N = character_space()
     speed = cracking_speed()
     station = processing_stations()
+    #
     # Defining the table instance
     table = ptable()
+    #
     # Defining the Table headers
     table.field_names = [f"Password Length","Password Space","Time to Crack (max)", "Key Entropy (bits)"]
+    #
     # Password length range; evaluating from 5 digits to 32 digits long.
     for L in range(5,33):
         ent = password_entropy(N[0],L)
@@ -215,9 +238,10 @@ def main():
         else:
             # Time in years
             time_crack = str('%.2E' % Decimal(timing/31_356_000)) + " years"
-        
+        #
         # Adding rows to the table
         table.add_row([f"{L} digits" ,"~ " + '%.2E' % Decimal(2**ent) , "~ " + time_crack , round(ent,2)])
+        
     # Printing the final Table
     print(table.get_string())
     print(f"The Table was generated based on a password composed by")
