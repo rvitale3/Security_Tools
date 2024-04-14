@@ -87,5 +87,5 @@ The Table was generated based on a password composed by
 Characters: [a-zA-Z0-9!@#$%^&*()+_~`-_=+[]{}|;:'",.<>?/]
 Number of characters 95
 The evaluated cracking speed: 100 THz
-Elements working is parallel to crack the password: 100,000,000 station(s)
+Elements working is parallel cracking the password: 100,000,000 station(s)
 ```
