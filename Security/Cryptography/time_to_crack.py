@@ -1,5 +1,10 @@
-#!/usr/bin/python3
-#
+#!/usr/bin/env python3
+
+# Title: Password Time to Crack Estimator  
+# Date: 2024-04-14
+# Author: Rubenangel Vitale
+# Version: 1.0
+
 import sys
 import math
 from prettytable import PrettyTable as ptable
