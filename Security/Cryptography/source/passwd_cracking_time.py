@@ -252,7 +252,7 @@ def main():
     print(f"The Table was generated based on a password composed by")
     print(f"Characters: {N[1]}")
     print(f"Number of characters {N[0]}")
-    print(f"The evaluated cracking speed: {speed[1]}")
+    print(f"Password cracking speed: {speed[1]}")
     print(f"Elements working is parallel cracking the password: {round(station):,} station(s)")
 
 if __name__ == "__main__":
