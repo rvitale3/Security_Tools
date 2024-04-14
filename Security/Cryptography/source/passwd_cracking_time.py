@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-# Title: Password Time to Crack Estimator  
+# Title: Password Cracking Time Estimator  
 # Date: 2024-04-14
 # Author: Rubenangel Vitale
 # Version: 1.0
