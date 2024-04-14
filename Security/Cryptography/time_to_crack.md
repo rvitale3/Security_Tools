@@ -1,6 +1,6 @@
 # Time to crack
-Estimates the time to crack based on the concept of password entropy.  
-The output provides an estimate on how long it would take to crack a password by exhausting the whole search space.  
+Estimates the time to crack based on the concept of [password entropy](https://en.wikipedia.org/wiki/Password_strength).  
+The output provides an estimate on how long it would take to crack a password by exhausting the maximum search space.  
 ## Requirements
 1. Python >= 3.6  
 2. [PrettyTable](https://pypi.org/project/prettytable/)  
