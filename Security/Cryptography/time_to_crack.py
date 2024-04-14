@@ -6,7 +6,7 @@ from decimal import Decimal
 
 def character_space():
     """
-    Allow the user to select the character space the password will be composite from.
+    Allows the user to select the character space the password will be composite from.
     ---------
     Arguments
     ---------
@@ -16,6 +16,7 @@ def character_space():
     ---------
     chars_space  :  based on the selected option by the user the 'chars_space' will be
     a list with the number of possible chars within that selection and the selection.
+    e.g chars_space = [26,"[a-z]"]
     """
     chars_list = int(input("""
     Please select the password character composition:\n
@@ -53,7 +54,7 @@ def character_space():
 
 def cracking_speed():
     """
-    Allow the user to select the cracking speed for a processing element.
+    Allows the user to select the cracking speed for a processing element.
     ---------
     Arguments
     ---------
@@ -63,6 +64,7 @@ def cracking_speed():
     ---------
     crack_speed : the selected speed for the processing element as list with the
     selected option as string.
+    e.g. crack_speed = [1e+6,"1 MHz"]
     """
     crack_list = int(input("""
     Please select the cracking speed:\n
@@ -103,7 +105,7 @@ def cracking_speed():
 
 def processing_stations():
     """
-    Allow the user to select the number of elements working in parallel to
+    Allows the user to select the number of elements working in parallel to
     crack the password.
     ---------
     Arguments
@@ -152,13 +154,13 @@ def processing_stations():
 
 def password_entropy(N,L):
     """
-    Calculates the password entropy for the given number of characters and 
+    Calculates the password entropy for the given character space and the
     length of the password.
     ---------
     Arguments
     ---------
     N   :   Character space.
-    L   :   Password Length.
+    L   :   Password length.
     ---------
     Returns
     ---------
@@ -170,7 +172,7 @@ def password_entropy(N,L):
 def cracking_time(ent, speed, station):
     """
     Calculates the approximate time needed to crack a password by brute forcing
-    the whole password searching space.
+    the maximum password searching space.
     ---------
     Arguments
     ---------
@@ -190,26 +192,33 @@ def main():
     N = character_space()
     speed = cracking_speed()
     station = processing_stations()
-    # Defining the table
+    # Defining the table instance
     table = ptable()
-    # Table headers composition
+    # Defining the Table headers
     table.field_names = [f"Password Length","Password Space","Time to Crack (max)", "Key Entropy (bits)"]
-    # Password length range selection from 5 digits to 32 digits long.
+    # Password length range; evaluating from 5 digits to 32 digits long.
     for L in range(5,33):
         ent = password_entropy(N[0],L)
         timing = cracking_time(ent, speed[0], station)
+        # Time in seconds
         if timing <= 60:
             time_crack = str('%.2E' % Decimal(timing)) + " secs"
+        # Time in minutes
         elif timing >= 60 and timing <= 3599:
             time_crack = str('%.2E' % Decimal(timing/60)) + " mins"
+        # Time in hours
         elif timing >= 3_600 and timing <= 86_399:
             time_crack = str('%.2E' % Decimal(timing/3_600)) + " hours"
+        # Time in days
         elif timing >= 86_400 and timing <= 31_535_999:
             time_crack = str('%.2E' % Decimal(timing/86_400)) + " days"
         else:
+            # Time in years
             time_crack = str('%.2E' % Decimal(timing/31_356_000)) + " years"
+        
         # Adding rows to the table
         table.add_row([f"{L} digits" ,"~ " + '%.2E' % Decimal(2**ent) , "~ " + time_crack , round(ent,2)])
+    # Printing the final Table
     print(table.get_string())
     print(f"The Table was generated based on a password composed by")
     print(f"Characters: {N[1]}")
