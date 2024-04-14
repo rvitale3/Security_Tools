@@ -1,6 +1,6 @@
-# Password Time to Crack Estimator
+# Password Cracking Time Estimator
 Estimates the time to crack for a password based on the concept of [password entropy](https://en.wikipedia.org/wiki/Password_strength).  
-File: [time_to_crack.py](https://github.com/rvitale3/Tools/blob/main/Security/Cryptography/source/time_to_crack.py)  
+File: [passwd_cracking_time.py](https://github.com/rvitale3/Tools/blob/main/Security/Cryptography/source/passwd_cracking_time.py)  
 ## Disclaimer
 This program does not take into account cracking time for dictionary attacks, mangling rules or any other advanced techniques; such as Probabilistic Context-Free Grammar (PCFGs), Markov model, Improved Transformer, neither AI.  
 The output only provides an estimate about how long it would take to crack a password by exhausting the password maximum search space.  
@@ -9,7 +9,7 @@ The output only provides an estimate about how long it would take to crack a pas
 2. [PrettyTable](https://pypi.org/project/prettytable/)  
 ## Running the script
 ```bash
-$ python time_to_crack.py
+$ python passwd_cracking_time.py
 
     Please select the password character composition:
 
