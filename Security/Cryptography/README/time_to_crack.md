@@ -84,7 +84,7 @@ $ python time_to_crack.py
 |    32 digits    |   ~ 3.77E+63   |   ~ 1.20E+34 years  |       211.2        |
 +-----------------+----------------+---------------------+--------------------+
 The Table was generated based on a password composed by
-Characters: [a-zA-Z0-9!@#$%^&*()+_~`-_=+[]{}|;:'",.<>?/]
+Characters: [a-zA-Z0-9!@#$%^&*()+_~`-_=+[]{}\|;:'",.<>?/]
 Number of characters 97
 The evaluated cracking speed: 100 THz
 Elements working is parallel to crack the password: 100,000,000 station(s)
