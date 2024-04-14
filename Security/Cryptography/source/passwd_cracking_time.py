@@ -253,7 +253,7 @@ def main():
     print(f"Characters: {N[1]}")
     print(f"Number of characters {N[0]}")
     print(f"The evaluated cracking speed: {speed[1]}")
-    print(f"Elements working is parallel to crack the password: {round(station):,} station(s)")
+    print(f"Elements working is parallel cracking the password: {round(station):,} station(s)")
 
 if __name__ == "__main__":
     main()
