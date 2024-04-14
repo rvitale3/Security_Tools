@@ -1,5 +1,5 @@
 # Time to crack
-Estimates the time to crack based on the concept of [password entropy](https://en.wikipedia.org/wiki/Password_strength).  
+Estimates the time to crack for a password based on the concept of [password entropy](https://en.wikipedia.org/wiki/Password_strength).  
 File: [time_to_crack.py](https://github.com/rvitale3/Tools/blob/main/Security/Cryptography/source/time_to_crack.py)  
 ## Disclaimer
 This program does not take into account cracking time for dictionary attacks, mangling rules or any other advanced techniques; such as Probabilistic Context-Free Grammar (PCFGs), Markov model, Improved Transformer, neither AI.  
