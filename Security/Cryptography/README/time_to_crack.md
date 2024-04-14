@@ -54,38 +54,38 @@ $ python time_to_crack.py
 +-----------------+----------------+---------------------+--------------------+
 | Password Length | Password Space | Time to Crack (max) | Key Entropy (bits) |
 +-----------------+----------------+---------------------+--------------------+
-|     5 digits    |   ~ 8.59E+09   |   ~ 8.59E-13 secs   |        33.0        |
-|     6 digits    |   ~ 8.33E+11   |   ~ 8.33E-11 secs   |        39.6        |
-|     7 digits    |   ~ 8.08E+13   |   ~ 8.08E-09 secs   |        46.2        |
-|     8 digits    |   ~ 7.84E+15   |   ~ 7.84E-07 secs   |        52.8        |
-|     9 digits    |   ~ 7.60E+17   |   ~ 7.60E-05 secs   |        59.4        |
-|    10 digits    |   ~ 7.37E+19   |   ~ 7.37E-03 secs   |        66.0        |
-|    11 digits    |   ~ 7.15E+21   |   ~ 7.15E-01 secs   |        72.6        |
-|    12 digits    |   ~ 6.94E+23   |   ~ 1.16E+00 mins   |        79.2        |
-|    13 digits    |   ~ 6.73E+25   |   ~ 1.87E+00 hours  |        85.8        |
-|    14 digits    |   ~ 6.53E+27   |   ~ 7.56E+00 days   |        92.4        |
-|    15 digits    |   ~ 6.33E+29   |   ~ 2.02E+00 years  |        99.0        |
-|    16 digits    |   ~ 6.14E+31   |   ~ 1.96E+02 years  |       105.6        |
-|    17 digits    |   ~ 5.96E+33   |   ~ 1.90E+04 years  |       112.2        |
-|    18 digits    |   ~ 5.78E+35   |   ~ 1.84E+06 years  |       118.8        |
-|    19 digits    |   ~ 5.61E+37   |   ~ 1.79E+08 years  |       125.4        |
-|    20 digits    |   ~ 5.44E+39   |   ~ 1.73E+10 years  |       132.0        |
-|    21 digits    |   ~ 5.27E+41   |   ~ 1.68E+12 years  |       138.6        |
-|    22 digits    |   ~ 5.12E+43   |   ~ 1.63E+14 years  |       145.2        |
-|    23 digits    |   ~ 4.96E+45   |   ~ 1.58E+16 years  |       151.8        |
-|    24 digits    |   ~ 4.81E+47   |   ~ 1.54E+18 years  |       158.4        |
-|    25 digits    |   ~ 4.67E+49   |   ~ 1.49E+20 years  |       165.0        |
-|    26 digits    |   ~ 4.53E+51   |   ~ 1.44E+22 years  |       171.6        |
-|    27 digits    |   ~ 4.39E+53   |   ~ 1.40E+24 years  |       178.2        |
-|    28 digits    |   ~ 4.26E+55   |   ~ 1.36E+26 years  |       184.8        |
-|    29 digits    |   ~ 4.13E+57   |   ~ 1.32E+28 years  |       191.4        |
-|    30 digits    |   ~ 4.01E+59   |   ~ 1.28E+30 years  |       198.0        |
-|    31 digits    |   ~ 3.89E+61   |   ~ 1.24E+32 years  |       204.6        |
-|    32 digits    |   ~ 3.77E+63   |   ~ 1.20E+34 years  |       211.2        |
+|     5 digits    |   ~ 7.74E+09   |   ~ 7.74E-13 secs   |       32.85        |
+|     6 digits    |   ~ 7.35E+11   |   ~ 7.35E-11 secs   |       39.42        |
+|     7 digits    |   ~ 6.98E+13   |   ~ 6.98E-09 secs   |       45.99        |
+|     8 digits    |   ~ 6.63E+15   |   ~ 6.63E-07 secs   |       52.56        |
+|     9 digits    |   ~ 6.30E+17   |   ~ 6.30E-05 secs   |       59.13        |
+|    10 digits    |   ~ 5.99E+19   |   ~ 5.99E-03 secs   |        65.7        |
+|    11 digits    |   ~ 5.69E+21   |   ~ 5.69E-01 secs   |       72.27        |
+|    12 digits    |   ~ 5.40E+23   |   ~ 5.40E+01 secs   |       78.84        |
+|    13 digits    |   ~ 5.13E+25   |   ~ 1.43E+00 hours  |       85.41        |
+|    14 digits    |   ~ 4.88E+27   |   ~ 5.64E+00 days   |       91.98        |
+|    15 digits    |   ~ 4.63E+29   |   ~ 1.48E+00 years  |       98.55        |
+|    16 digits    |   ~ 4.40E+31   |   ~ 1.40E+02 years  |       105.12       |
+|    17 digits    |   ~ 4.18E+33   |   ~ 1.33E+04 years  |       111.69       |
+|    18 digits    |   ~ 3.97E+35   |   ~ 1.27E+06 years  |       118.26       |
+|    19 digits    |   ~ 3.77E+37   |   ~ 1.20E+08 years  |       124.83       |
+|    20 digits    |   ~ 3.58E+39   |   ~ 1.14E+10 years  |       131.4        |
+|    21 digits    |   ~ 3.41E+41   |   ~ 1.09E+12 years  |       137.97       |
+|    22 digits    |   ~ 3.24E+43   |   ~ 1.03E+14 years  |       144.54       |
+|    23 digits    |   ~ 3.07E+45   |   ~ 9.80E+15 years  |       151.11       |
+|    24 digits    |   ~ 2.92E+47   |   ~ 9.31E+17 years  |       157.68       |
+|    25 digits    |   ~ 2.77E+49   |   ~ 8.85E+19 years  |       164.25       |
+|    26 digits    |   ~ 2.64E+51   |   ~ 8.40E+21 years  |       170.82       |
+|    27 digits    |   ~ 2.50E+53   |   ~ 7.98E+23 years  |       177.39       |
+|    28 digits    |   ~ 2.38E+55   |   ~ 7.58E+25 years  |       183.96       |
+|    29 digits    |   ~ 2.26E+57   |   ~ 7.21E+27 years  |       190.53       |
+|    30 digits    |   ~ 2.15E+59   |   ~ 6.85E+29 years  |       197.1        |
+|    31 digits    |   ~ 2.04E+61   |   ~ 6.50E+31 years  |       203.67       |
+|    32 digits    |   ~ 1.94E+63   |   ~ 6.18E+33 years  |       210.24       |
 +-----------------+----------------+---------------------+--------------------+
 The Table was generated based on a password composed by
-Characters: [a-zA-Z0-9!@#$%^&*()+_~`-_=+[]{}\|;:'",.<>?/]
-Number of characters 97
+Characters: [a-zA-Z0-9!@#$%^&*()+_~`-_=+[]{}|;:'",.<>?/]
+Number of characters 95
 The evaluated cracking speed: 100 THz
 Elements working is parallel to crack the password: 100,000,000 station(s)
 ```
