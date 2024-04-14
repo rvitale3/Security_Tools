@@ -34,7 +34,7 @@ def character_space():
         (5) Lower/Numbers       [a-z0-9]
         (6) Upper/Numbers       [A-Z0-9]
         (7) Lower/Upper/Numbers [a-zA-Z0-9]
-        (8) All and Special     [a-zA-Z0-9!@#$%^&*()+_~`-_=+[]{}\|;:\'",.<>?/]\n
+        (8) All and Special     [a-zA-Z0-9!@#$%^&*()+~`-_=+[]{}\|;:\'",.<>?/]\n
         Enter a number from the list: """))
     except:
         print("\nInvalid option : Please try again and select a valid number from the list\n")
@@ -56,7 +56,7 @@ def character_space():
         elif chars_list == 7:
             chars_space = [62,"[a-zA-Z0-9]"]
         else:
-            chars_space = [97,"[a-zA-Z0-9!@#$%^&*()+_~`-_=+[]{}|;:\'\",.<>?/]"]
+            chars_space = [95,"[a-zA-Z0-9!@#$%^&*()+_~`-_=+[]{}|;:\'\",.<>?/]"]
             
     else:
         print("\nInvalid option : Please try again and select a valid number from the list\n")
