@@ -3,7 +3,7 @@ Estimates the time to crack for a password based on the concept of [password ent
 File: [time_to_crack.py](https://github.com/rvitale3/Tools/blob/main/Security/Cryptography/source/time_to_crack.py)  
 ## Disclaimer
 This program does not take into account cracking time for dictionary attacks, mangling rules or any other advanced techniques; such as Probabilistic Context-Free Grammar (PCFGs), Markov model, Improved Transformer, neither AI.  
-The output provides only an estimate on how long it would take to crack a password by exhausting the maximum password search space.  
+The output only provides an estimate about how long it would take to crack a password by exhausting the password maximum search space.  
 ## Requirements
 1. Python >= 3.6  
 2. [PrettyTable](https://pypi.org/project/prettytable/)  
