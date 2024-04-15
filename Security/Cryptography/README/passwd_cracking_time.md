@@ -2,7 +2,7 @@
 Estimates the time to crack for a password based on the concept of [password entropy](https://en.wikipedia.org/wiki/Password_strength).  
 File: [passwd_cracking_time.py](https://github.com/rvitale3/Tools/blob/main/Security/Cryptography/source/passwd_cracking_time.py)  
 ## Disclaimer
-This program does not take into account cracking time for dictionary attacks, mangling rules or any other advanced techniques; such as Probabilistic Context-Free Grammar (PCFGs), Markov model, Improved Transformer, neither AI.  
+This program does not take into account cracking time from dictionary attacks, mangling rules or any other advanced techniques; such as Probabilistic Context-Free Grammar (PCFGs), Markov model, Improved Transformer, neither AI.  
 The output only provides an estimate about how long it would take to crack a password by exhausting the password maximum search space.  
 ## Requirements
 1. Python >= 3.6  
