@@ -1,9 +1,13 @@
 
 # RSA Key and CSR pair generation from old certificate Subject Info details
 
-## Store all the old certs in the same path where the script is located
+## Requirements
+1. Python >= 3.6  
+2. [Cryptography](https://pypi.org/project/cryptography/)  
+
+## Store the old certs in the same path where the script is located
 ```bash
-$ ll
+$ ls -l
 total 48
 -rw-r--r-- 1 rv3h3x rv3h3x  117 Jun 26 14:28 cert_list.txt
 -rw-r--r-- 1 rv3h3x rv3h3x 3664 Jun 26 14:49 key_csr_from_old_cert.py
@@ -72,7 +76,7 @@ $ for i in {1..9}; do openssl req -in output/server_${i}_csr.pem -noout -text | 
 ```
 ## Listing all newly created files Keys/CSRs
 ```bash
-$ ll output 
+$ $ ls -l output 
 total 72
 -rw-r--r-- 1 rv3h3x rv3h3x 1029 Jun 26 15:35 server_1_csr.pem
 -rw-r--r-- 1 rv3h3x rv3h3x 1675 Jun 26 15:35 server_1_key.pem
