@@ -14,6 +14,17 @@ import os
 
 # Function to load and decode an existing certificate
 def load_certificate(cert_path):
+    """
+    Load the x509 certificate
+    ---------
+    Arguments
+    ---------
+    cert_path    : will be provided from the list text file.
+    ---------
+    Returns
+    ---------
+    cert  :  return the loaded certificate from file list.
+    """
     with open(cert_path, 'rb') as cert_file:
         cert_data = cert_file.read()
         cert = x509.load_pem_x509_certificate(cert_data, default_backend())
@@ -21,6 +32,17 @@ def load_certificate(cert_path):
 
 # Function to extract subject values from the certificate
 def get_subject_info(cert):
+    """
+    Extract the certificate subject information.
+    ---------
+    Arguments
+    ---------
+    cert    : To use the cert returned from fnc load_certificate.
+    ---------
+    Returns
+    ---------
+    subject_info  :  return the extracted subject information from the cert.
+    """
     subject = cert.subject
     subject_info = {}
     for oid in [NameOID.COMMON_NAME, NameOID.COUNTRY_NAME, NameOID.STATE_OR_PROVINCE_NAME,
@@ -34,6 +56,17 @@ def get_subject_info(cert):
 
 # Function to generate a new key pair
 def generate_key_pair():
+    """
+    Generates a RSA private key 2048 bits.
+    ---------
+    Arguments
+    ---------
+    No Arguments
+    ---------
+    Returns
+    ---------
+    private_key  :  return a 2048 bits RSA private key.
+    """    
     private_key = rsa.generate_private_key(
         public_exponent=65537,
         key_size=2048,
@@ -43,6 +76,19 @@ def generate_key_pair():
 
 # Function to create a CSR
 def create_csr(private_key, subject_info):
+    """
+    Creates a Certificate Signing Request derived frmo the newly create Private Key
+    and the information extracted from the certificate from the list.
+    ---------
+    Arguments
+    ---------
+    private_key    : Uses the 2048 bits RSA private key generated.
+    subject_info   : The subject information extracted from the certificate
+    ---------
+    Returns
+    ---------
+    csr  :  return the Certificate Signing Request.
+    """
     name_attributes = []
     for oid, value in subject_info.items():
         if value:
@@ -52,6 +98,24 @@ def create_csr(private_key, subject_info):
 
 # Function to save the private key and CSR to files
 def save_to_files(private_key, csr, key_path, csr_path):
+    """
+    Creates a Certificate Signing Request derived frmo the newly create Private Key
+    and the information extracted from the certificate from the list.
+    ---------
+    Arguments
+    ---------
+    private_key    : Uses the 2048 bits RSA private key generated.
+    key_path       : The system path where the new key will be stored, by default is
+                    /path/output/base_name_key.pem
+    csr            : Uses the CSR generated derived from the new key and the old cert
+                     information
+    csr_path       : The system path where the new CSR will be stored, by default
+                    /path/output/base_name_csr.pem
+    ---------
+    Returns
+    ---------
+    No returns but stored the key and csr in the OS file system.
+    """
     # Save the private key
     with open(key_path, 'wb') as key_file:
         key_file.write(
@@ -67,6 +131,20 @@ def save_to_files(private_key, csr, key_path, csr_path):
 
 # Main function
 def main(cert_list_path, output_dir):
+    """
+    Main function where all other functions are called.
+    ---------
+    Arguments
+    ---------
+    cert_list_path   : Uses a list of certificate files, the data is parsed as a txt list of 
+                       certificates.
+    output_dir       : Hardcoded as "output" if the directory does not exist, it is created 
+                       when first run
+    ---------
+    Returns
+    ---------
+    No returns but prints the file system path where the Key and the CSR are stored.
+    """
     with open(cert_list_path, 'r') as f:
         cert_paths = f.read().splitlines()
 
