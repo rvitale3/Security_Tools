@@ -9,18 +9,18 @@ File: [passwd_cracking_time.py](https://github.com/rvitale3/Tools/blob/main/Secu
 ```bash
 $ ls -l
 total 48
--rw-r--r-- 1 rv3h3x rv3h3x  117 Jun 26 14:28 cert_list.txt
--rw-r--r-- 1 rv3h3x rv3h3x 3664 Jun 26 14:49 key_csr_from_old_cert.py
-drwxr-xr-x 2 rv3h3x rv3h3x 4096 Jun 26 14:50 output
--rw-r--r-- 1 rv3h3x rv3h3x 1391 Jun 26 14:24 server_1.crt
--rw-r--r-- 1 rv3h3x rv3h3x 1391 Jun 26 14:24 server_2.crt
--rw-r--r-- 1 rv3h3x rv3h3x 1391 Jun 26 14:24 server_3.crt
--rw-r--r-- 1 rv3h3x rv3h3x 1391 Jun 26 14:24 server_4.crt
--rw-r--r-- 1 rv3h3x rv3h3x 1391 Jun 26 14:24 server_5.crt
--rw-r--r-- 1 rv3h3x rv3h3x 1391 Jun 26 14:24 server_6.crt
--rw-r--r-- 1 rv3h3x rv3h3x 1391 Jun 26 14:24 server_7.crt
--rw-r--r-- 1 rv3h3x rv3h3x 1391 Jun 26 14:24 server_8.crt
--rw-r--r-- 1 rv3h3x rv3h3x 1391 Jun 26 14:24 server_9.crt
+-rw-r--r-- 1 root root  117 Jun 26 14:28 cert_list.txt
+-rw-r--r-- 1 root root 3664 Jun 26 14:49 key_csr_from_old_cert.py
+drwxr-xr-x 2 root root 4096 Jun 26 14:50 output
+-rw-r--r-- 1 root root 1391 Jun 26 14:24 server_1.crt
+-rw-r--r-- 1 root root 1391 Jun 26 14:24 server_2.crt
+-rw-r--r-- 1 root root 1391 Jun 26 14:24 server_3.crt
+-rw-r--r-- 1 root root 1391 Jun 26 14:24 server_4.crt
+-rw-r--r-- 1 root root 1391 Jun 26 14:24 server_5.crt
+-rw-r--r-- 1 root root 1391 Jun 26 14:24 server_6.crt
+-rw-r--r-- 1 root root 1391 Jun 26 14:24 server_7.crt
+-rw-r--r-- 1 root root 1391 Jun 26 14:24 server_8.crt
+-rw-r--r-- 1 root root 1391 Jun 26 14:24 server_9.crt
 ```
 ## Create a new file called ```cert_list.txt``` and list all the old certs within it.
 ```bash                                                                                                                                        
@@ -78,22 +78,22 @@ $ for i in {1..9}; do openssl req -in output/server_${i}_csr.pem -noout -text | 
 ```bash
 $ $ ls -l output 
 total 72
--rw-r--r-- 1 rv3h3x rv3h3x 1029 Jun 26 15:35 server_1_csr.pem
--rw-r--r-- 1 rv3h3x rv3h3x 1675 Jun 26 15:35 server_1_key.pem
--rw-r--r-- 1 rv3h3x rv3h3x 1029 Jun 26 15:35 server_2_csr.pem
--rw-r--r-- 1 rv3h3x rv3h3x 1679 Jun 26 15:35 server_2_key.pem
--rw-r--r-- 1 rv3h3x rv3h3x 1029 Jun 26 15:35 server_3_csr.pem
--rw-r--r-- 1 rv3h3x rv3h3x 1675 Jun 26 15:35 server_3_key.pem
--rw-r--r-- 1 rv3h3x rv3h3x 1029 Jun 26 15:35 server_4_csr.pem
--rw-r--r-- 1 rv3h3x rv3h3x 1679 Jun 26 15:35 server_4_key.pem
--rw-r--r-- 1 rv3h3x rv3h3x 1029 Jun 26 15:35 server_5_csr.pem
--rw-r--r-- 1 rv3h3x rv3h3x 1675 Jun 26 15:35 server_5_key.pem
--rw-r--r-- 1 rv3h3x rv3h3x 1029 Jun 26 15:35 server_6_csr.pem
--rw-r--r-- 1 rv3h3x rv3h3x 1679 Jun 26 15:35 server_6_key.pem
--rw-r--r-- 1 rv3h3x rv3h3x 1029 Jun 26 15:35 server_7_csr.pem
--rw-r--r-- 1 rv3h3x rv3h3x 1675 Jun 26 15:35 server_7_key.pem
--rw-r--r-- 1 rv3h3x rv3h3x 1029 Jun 26 15:35 server_8_csr.pem
--rw-r--r-- 1 rv3h3x rv3h3x 1679 Jun 26 15:35 server_8_key.pem
--rw-r--r-- 1 rv3h3x rv3h3x 1029 Jun 26 15:35 server_9_csr.pem
--rw-r--r-- 1 rv3h3x rv3h3x 1675 Jun 26 15:35 server_9_key.pem
+-rw-r--r-- 1 root root 1029 Jun 26 15:35 server_1_csr.pem
+-rw-r--r-- 1 root root 1675 Jun 26 15:35 server_1_key.pem
+-rw-r--r-- 1 root root 1029 Jun 26 15:35 server_2_csr.pem
+-rw-r--r-- 1 root root 1679 Jun 26 15:35 server_2_key.pem
+-rw-r--r-- 1 root root 1029 Jun 26 15:35 server_3_csr.pem
+-rw-r--r-- 1 root root 1675 Jun 26 15:35 server_3_key.pem
+-rw-r--r-- 1 root root 1029 Jun 26 15:35 server_4_csr.pem
+-rw-r--r-- 1 root root 1679 Jun 26 15:35 server_4_key.pem
+-rw-r--r-- 1 root root 1029 Jun 26 15:35 server_5_csr.pem
+-rw-r--r-- 1 root root 1675 Jun 26 15:35 server_5_key.pem
+-rw-r--r-- 1 root root 1029 Jun 26 15:35 server_6_csr.pem
+-rw-r--r-- 1 root root 1679 Jun 26 15:35 server_6_key.pem
+-rw-r--r-- 1 root root 1029 Jun 26 15:35 server_7_csr.pem
+-rw-r--r-- 1 root root 1675 Jun 26 15:35 server_7_key.pem
+-rw-r--r-- 1 root root 1029 Jun 26 15:35 server_8_csr.pem
+-rw-r--r-- 1 root root 1679 Jun 26 15:35 server_8_key.pem
+-rw-r--r-- 1 root root 1029 Jun 26 15:35 server_9_csr.pem
+-rw-r--r-- 1 root root 1675 Jun 26 15:35 server_9_key.pem
 ```
