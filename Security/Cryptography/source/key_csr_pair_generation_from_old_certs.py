@@ -1,3 +1,10 @@
+#!/usr/bin/env python3
+
+# Title: Key/CSR pair generation from data contained in old x509 certificates   
+# Date: 2024-06-26
+# Author: Rubenangel Vitale
+# Version: 1.0
+
 from cryptography import x509
 from cryptography.hazmat.backends import default_backend
 from cryptography.hazmat.primitives import hashes, serialization
@@ -20,9 +27,9 @@ def get_subject_info(cert):
                 NameOID.LOCALITY_NAME, NameOID.ORGANIZATION_NAME, NameOID.ORGANIZATIONAL_UNIT_NAME,
                 NameOID.EMAIL_ADDRESS]:
         try:
-            subject_info[oid._name] = subject.get_attributes_for_oid(oid)[0].value
+            subject_info[oid] = subject.get_attributes_for_oid(oid)[0].value
         except IndexError:
-            subject_info[oid._name] = None
+            subject_info[oid] = None
     return subject_info
 
 # Function to generate a new key pair
@@ -37,9 +44,8 @@ def generate_key_pair():
 # Function to create a CSR
 def create_csr(private_key, subject_info):
     name_attributes = []
-    for oid_name, value in subject_info.items():
+    for oid, value in subject_info.items():
         if value:
-            oid = getattr(NameOID, oid_name)
             name_attributes.append(x509.NameAttribute(oid, value))
     csr = x509.CertificateSigningRequestBuilder().subject_name(x509.Name(name_attributes)).sign(private_key, hashes.SHA256(), default_backend())
     return csr
@@ -76,8 +82,9 @@ def main(cert_list_path, output_dir):
 
         # Generate output file paths
         base_name = os.path.basename(cert_path)
-        key_path = os.path.join(output_dir, f"new_{base_name}_key.pem")
-        csr_path = os.path.join(output_dir, f"new_{base_name}_csr.pem")
+        base_name = base_name.split(".")[0]
+        key_path = os.path.join(output_dir, f"{base_name}_key.pem")
+        csr_path = os.path.join(output_dir, f"{base_name}_csr.pem")
 
         save_to_files(private_key, csr, key_path, csr_path)
         print(f"New key and CSR for {cert_path} have been saved to {key_path} and {csr_path} respectively.")
