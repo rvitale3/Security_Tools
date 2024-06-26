@@ -1,5 +1,5 @@
 
-# RSA Key and CSR pair generation from old certificate Subjec Info details
+# RSA Key and CSR pair generation from old certificate Subject Info details
 
 ## Store all the old certs in the same path where the script is located
 ```bash
