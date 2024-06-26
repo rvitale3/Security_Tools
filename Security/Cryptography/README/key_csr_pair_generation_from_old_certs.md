@@ -1,6 +1,6 @@
 
 # RSA Key and CSR pair generation from old certificate Subject Info details
-File: [passwd_cracking_time.py](https://github.com/rvitale3/Tools/blob/main/Security/Cryptography/source/key_csr_pair_generation_from_old_certs.py)  
+File: [key_csr_pair_generation_from_old_certs.py](https://github.com/rvitale3/Tools/blob/main/Security/Cryptography/source/key_csr_pair_generation_from_old_certs.py)  
 ## Requirements
 1. Python >= 3.6  
 2. [Cryptography](https://pypi.org/project/cryptography/)  
